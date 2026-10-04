@@ -27,7 +27,7 @@ jobs:
         run: brew trust --formula DeanDiasti/tap/fusion-cli
       - name: Tap the candidate formula
         run: brew tap DeanDiasti/tap "$GITHUB_WORKSPACE"
-      - name: Install isolated CLI and SDK dependencies
+      - name: Install standard-library-only CLI
         run: brew install --build-from-source DeanDiasti/tap/fusion-cli
       - name: Test offline commands and temporary add-in installation
         run: brew test DeanDiasti/tap/fusion-cli
