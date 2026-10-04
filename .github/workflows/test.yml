@@ -23,6 +23,8 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+      - name: Trust only the candidate formula
+        run: brew trust --formula DeanDiasti/tap/fusion-cli
       - name: Tap the candidate formula
         run: brew tap DeanDiasti/tap "$GITHUB_WORKSPACE"
       - name: Install isolated CLI and SDK dependencies
